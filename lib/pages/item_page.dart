@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:belanja/models/item.dart';
+import 'package:go_router/go_router.dart';
 
 class ItemPage extends StatelessWidget {
+  
   @override
   Widget build(BuildContext context) {
-    final itemArgs = ModalRoute.of(context)!.settings.arguments as Item;
+    final itemArgs = GoRouterState.of(context).extra as Item;
 
     return Scaffold(
       appBar: AppBar(

@@ -1,5 +1,8 @@
+import 'package:belanja/main.dart';
 import 'package:belanja/models/item.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+
 
 class HomePage extends StatelessWidget {
   final List<Item> items = [
@@ -44,7 +47,7 @@ class HomePage extends StatelessWidget {
                   final item = items[index];
                   return InkWell(
                     onTap: () {
-                      Navigator.pushNamed(context, '/item', arguments: item);
+                      context.go('/item', extra: item);
                     },
                     child: GridTile(
                       footer: Container(
